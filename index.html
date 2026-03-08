@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Budget App</title>
+<link rel="manifest" href="manifest.json">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #baaf34;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        background-color: #baaf34;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        text-align: center;
+        width: 300px;
+    }
+
+    h1 {
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0 5px;
+        text-align: left;
+        color: #333;
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+    button {
+        background-color: white;
+        color: #baaf34;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background-color: #a1912c;
+    }
+
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+        color: white;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>MY BUDGET APP</h1>
+
+    <label>daily allowance (₱):</label>
+    <input type="number" id="allowance" placeholder="Type Here">
+
+    <label>expenses (₱):</label>
+    <input type="number" id="expenses" placeholder="Type Here">
+
+    <button onclick="checkBudget()">CHECK</button>
+
+    <p id="result"></p>
+</div>
+
+<script>
+function checkBudget(){
+    let allowance = Number(document.getElementById("allowance").value);
+    let expenses = Number(document.getElementById("expenses").value);
+    let result = document.getElementById("result");
+
+    if(allowance === 0 && expenses === 0){
+        result.innerHTML = "Please enter your allowance and expenses.";
+    }
+    else if(expenses <= allowance){
+        result.innerHTML = "mayo mag budget a";
+    } 
+    else{
+        result.innerHTML = "abaw gastador";
+    }
+}
+</script>
+
+<script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("service-worker.js")
+    .then(() => console.log("Service Worker Registered"));
+}
+</script>
+</body>
+</html>

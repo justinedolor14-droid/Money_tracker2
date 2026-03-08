@@ -1,0 +1,21 @@
+{
+  "name": "MONEY TRACKER",
+  "short_name": "Tacker",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#baaf34",
+  "theme_color": "baaf34",
+  "description": "A money tracker application",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
